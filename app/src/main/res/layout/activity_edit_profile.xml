@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="30dp"
+    android:scrollbars="none"
+    tools:context=".EditProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatarEdit"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:background="@color/white"
+                android:clickable="false"
+                android:padding="3dp"
+                android:src="@drawable/user_woman"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/circle"
+                app:strokeColor="@color/gray"
+                app:strokeWidth="3dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/avatarUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
+                android:elevation="20dp"
+                android:onClick="openImagePicker"
+                app:layout_constraintBottom_toBottomOf="@+id/avatarEdit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/avatarEdit"
+                app:srcCompat="@drawable/ic_camera" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RadioGroup
+            android:id="@+id/radioProfileGroupSexe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioProfileButtonM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Homme" />
+
+            <RadioButton
+                android:id="@+id/radioProfileButtonF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Femme" />
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:boxBackgroundColor="@color/white"
+            app:startIconDrawable="@drawable/ic_account"
+            app:shapeAppearance="@style/editShape">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editProfileFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:boxBackgroundColor="@color/white"
+            app:shapeAppearance="@style/editShape"
+            app:startIconDrawable="@drawable/ic_account">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editProfileLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="prenom"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:boxBackgroundColor="@color/white"
+            app:shapeAppearance="@style/editShape"
+            app:startIconDrawable="@drawable/ic_mail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editProfileEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="email"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:boxBackgroundColor="@color/white"
+            app:startIconDrawable="@drawable/ic_phone"
+            app:shapeAppearance="@style/editShape">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editProfileTelphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Téléphone"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:boxBackgroundColor="@color/white"
+            app:shapeAppearance="@style/editShape">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editProfileDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:hint="Description"
+                android:inputType="textMultiLine"
+                android:minLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2">
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonUpdateProfile"
+                android:layout_width="0dp"
+                android:layout_height="58dp"
+                android:layout_weight=".6"
+                android:elevation="20dp"
+                android:onClick="updateUser"
+                android:text="valider"
+
+                app:shapeAppearance="@style/buttonShape" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

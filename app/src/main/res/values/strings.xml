@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Social media</string>
+    <string name="navigation_open">Open Navigation Drawer</string>
+    <string name="navigation_close">Close Navigation Drawer</string>
+    <string name="forgot_password"><u>Mot de passe oublié ?</u></string>
+    <string name="menu_item_editer">Editer</string>
+    <string name="menu_item_supprimer">Supprimer</string>
+</resources>

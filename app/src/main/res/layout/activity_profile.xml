@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:orientation="vertical">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/toolbar"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/profile_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:id="@+id/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header">
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/edit_profile"
+                    android:layout_width="195dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight=".5"
+                    android:onClick="editProfile"
+                    android:shadowColor="@color/darkgreen"
+                    android:text="modifier profile"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    app:icon="@drawable/ic_edit"
+                    app:iconPadding="5dp"
+                    app:iconSize="16dp"
+                    app:iconTint="@color/white"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/edit_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginLeft="5dp"
+                    android:shadowColor="@color/darkgreen"
+                    android:text="changer le mot de passe"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    app:icon="@drawable/ic_key"
+                    app:iconPadding="5dp"
+                    app:iconSize="16dp"
+                    app:iconTint="@color/white"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/lightgray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttons" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view">
+
+                <FrameLayout
+                    android:id="@+id/freindsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:minHeight="120dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Liste des amis"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/empty_view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:minHeight="120dp"
+                        android:text="aucun amis"
+                        android:visibility="gone" />
+
+                    <GridView
+                        android:id="@+id/freindsGrid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:numColumns="3"
+                        android:stretchMode="columnWidth" />
+                </FrameLayout>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/lightgray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/freindsList" />
+
+                <FrameLayout
+                    android:id="@+id/publicationList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:minHeight="120dp">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Publications"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/empty_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:minHeight="120dp"
+                        android:text="aucune publciation"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/publicationView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:nestedScrollingEnabled="true" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

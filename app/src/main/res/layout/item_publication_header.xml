@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/avatarPub"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/user_woman"
+        app:shapeAppearanceOverlay="@style/circle" />
+
+    <TextView
+        android:id="@+id/authorPub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/sensitaone"
+        android:gravity="center|start"
+        android:text="autheur de la publication"
+        android:textColor="@color/green"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textViewOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_weight=".5"
+        android:clickable="true"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:text="&#8942;"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="30dp" />
+</LinearLayout>

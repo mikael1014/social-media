@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navAccount"
+            android:checked="false"
+            android:icon="@drawable/ic_account"
+            android:title="Profile" />
+        <item
+            android:id="@+id/navMessage"
+            android:icon="@drawable/ic_message"
+            android:title="Messages" />
+        <item
+            android:id="@+id/navArticle"
+            android:icon="@drawable/ic_article"
+            android:title="Publication" />
+        <item
+            android:id="@+id/navGroupe"
+            android:icon="@drawable/ic_accounts"
+            android:title="Groupes" />
+    </group>
+    <item
+        android:id="@+id/communication"
+        android:title="Communication" >
+        <menu >
+            <item
+                android:id="@+id/navShare"
+                android:icon="@drawable/ic_share"
+                android:title="Partager" />
+            <item
+                android:id="@+id/navSend"
+                android:icon="@drawable/ic_send"
+                android:title="Envoyer" />
+        </menu>
+    </item>
+</menu>

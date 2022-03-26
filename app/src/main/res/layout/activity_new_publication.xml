@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".NewPublicationActivity">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/radioPublicationVisibilite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/visibilitePublic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="public" />
+
+        <RadioButton
+            android:id="@+id/visibilitePrivate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="privée" />
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:boxBackgroundColor="@color/white"
+        app:shapeAppearance="@style/editTextShape">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextePublication"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|left"
+            android:hint="Texte"
+            android:inputType="textMultiLine"
+            android:minLines="5" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+
+            android:id="@+id/imagePreview"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/dashed"
+            android:clickable="true"
+            android:onClick="openImagePicker"
+            app:layout_constraintBottom_toTopOf="@+id/savePublication"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_cloud_upload"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <!--        <ProgressBar-->
+<!--            android:id="@+id/progress_bar"-->
+<!--            style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_margin="30dp"-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:max="100"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/image_view"-->
+<!--            tools:progress="40" />-->
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="56dp"
+            android:text="cliquer dans le cadre pour choisir une image"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/savePublication"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagePreview"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/savePublication"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/darkgreen"
+            android:gravity="center"
+            android:onClick="savePublication"
+            android:shadowColor="@color/darkgreen"
+            android:text="enregistrer"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imagePreview"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
